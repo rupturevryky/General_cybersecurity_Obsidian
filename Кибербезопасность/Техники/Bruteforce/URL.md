@@ -33,7 +33,10 @@ for name in $(cat dns);do host $name.alg*******ge.com |grep "has address"; done
 dnsmap alg*******ge.com
 ```
 Процесс это небыстрый. У меня он занял (для выбранного домена) 1555 секунд, но и результат выдал неплохой — нашел 18 поддоменов.
-## gobuster
+
+---
+
+# gobuster
 
 Позволят брутфорсить url по ключевым словам. 
 Предустановленная папка: `/usr/share/wordlists/dirbuster`

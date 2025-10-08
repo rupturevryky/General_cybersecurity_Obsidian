@@ -37,6 +37,83 @@ docker run hello-world
 | `docker rmi`     | Удалите образ Docker.                    |
 | `docker logs`    | Просмотр журналов контейнера.            |
 
+```
+# справочная информация
+docker --help # список доступных команд
+docker <command> --help # информация по команде 
+
+docker --version # версия Docker
+docker info # общая информация о системе 
+
+# работа с образами
+docker search debian # поиск образов по ключевому слову debian 
+
+docker pull ubuntu # скачивание последней версии (тег по умолчанию latest) официального образа ubuntu (издатель не указывается) из репозитория по умолчанию docker.io/library
+docker pull prom/prometheus # скачивание последней версии (latest) образа prometheus от издателя prom из репозитория docker.io/prom
+docker pull docker.io/library/ubuntu:18.04 # скачивание из репозитория docker.io официального образа ubuntu с тегом 18.04 
+
+docker images # просмотр локальных образов 
+
+docker rmi <image_name>:<tag> # удаление образа. Вместо <image_name>:<tag> можно указать <image_id>. Для удаления образа все контейнеры на его основе должны быть как минимум остановлены
+docker rmi $(docker images -aq) # удаление всех образов 
+
+# работа с контейнерами
+docker run hello-world # Hello, world! в мире контейнеров
+docker run -it ubuntu bash # запуск контейнера ubuntu и выполнение команды bash в интерактивном режиме
+docker run --name docker-getting-started --publish 8080:80 docker/getting-started # запуск контейнера gettind-started с отображением (маппингом) порта 8080 хоста на порт 80 внутрь контейнера
+docker run --detach --name mongodb docker.io/library/mongo:4.4.10 # запуск контейнера mongodb с именем mongodb в фоновом режиме. Данные будут удалены при удалении контейнера! 
+
+docker ps # просмотр запущенных контейнеров
+docker ps -a # просмотр всех контейнеров (в том числе остановленных)
+docker stats --no-stream # просмотр статистики 
+
+docker start alpine # создание контейнера из образа alpine 
+
+docker start <container_name> # запуск созданного контейнера. Вместо <container_name> можно указать <container_id>
+docker start $(docker ps -a -q) # запуск всех созданных контейнеров 
+
+docker stop <container_name> # остановка контейнера. Вместо <container_name> можно указать <container_id>
+docker stop $(docker ps -a -q) # остановка всех контейнеров 
+
+docker rm <container_name> # удаление контейнера. Вместо <container_name> можно указать <container_id>
+docker rm $(docker ps -a -q) # удаление всех контейнеров 
+
+# система
+docker system info # общая информация о системе (соответствует docker info)
+docker system df # занятое место на диске
+docker system prune -af # удаление неиспользуемых данных и очистка диска
+```
+
+Рассмотрим два способа хранения данных контейнеров:
+
+- [named volumes](https://docs.docker.com/get-started/05_persisting_data/) – именованные тома хранения данных  
+    Позволяет сохранять данные в именованный том, который располагается в каталоге в /var/lib/docker/volumes и не удаляется при удалении контейнера. Том может быть подключен к нескольким контейнерам
+    
+- [bind mount](https://docs.docker.com/get-started/06_bind_mounts/) – монтирование каталога с хоста  
+    Позволяет монтировать файл или каталог с хоста в контейнер. На практике используется для проброса конфигурационных файлов или каталога БД внутрь контейнера
+    
+
+Ниже приведены примеры использования named volume и bind mount:
+
+```
+# справочная информация
+docker <command> --help 
+
+# named volume
+docker run --detach --name jenkins --publish 80:8080 --volume=jenkins_home:/var/jenkins_home/ jenkins/jenkins:lts-jdk11 # запуск контейнера jenkins с подключением каталога /var/jenkins_home как тома jenkins_home
+docker volume ls # просмотр томов
+docker volume prune # удаление неиспользуемых томов и очистка диска. Для удаления тома все контейнеры, в которых он подключен, должны быть остановлены и удалены 
+
+# bind mount
+# запуск контейнера node-exporter с монтированием каталогов внутрь контейнера в режиме read only: /proc хоста прокидывается в /host/proc:ro внутрь контейнера, /sys - в /host/sys:ro, а / - в /rootfs:ro
+docker run \
+-p 9100:9100 \
+-v "/proc:/host/proc:ro" \
+-v "/sys:/host/sys:ro" \
+-v "/:/rootfs:ro" \
+--name node-exporter prom/node-exporter:v1.1.2
+```
+
 **Скачивание официального образа Nginx**:
 ```shell
 docker pull nginx

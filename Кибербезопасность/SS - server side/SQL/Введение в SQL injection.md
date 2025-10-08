@@ -1,3 +1,9 @@
+# Шпоргалки
+
+1. [SQL Injection | pentestmonkey](https://pentestmonkey.net/category/cheat-sheet/sql-injection)
+2. [SQL injection cheat sheet | Web Security Academy](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+
+
 # Обнаружение SQLi
 
 Прежде чем мы начнем нарушать логику веб-приложения и пытаться обойти аутентификацию, мы сначала должны проверить, уязвима ли форма входа в систему для SQL-инъекций. Для этого мы попытаемся добавить одну из следующих полезных нагрузок после нашего имени пользователя и посмотрим, вызывает ли это какие-либо ошибки или меняет поведение страницы:
