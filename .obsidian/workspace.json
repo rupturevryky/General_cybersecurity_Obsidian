@@ -8,34 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e61e835bfdf08d97",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Стороннее/Моделирование угроз по ФСТЭК.canvas",
-                "viewState": {
-                  "x": -125.57827273428845,
-                  "y": 968.5686698309247,
-                  "zoom": -1.2294210273837234
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Моделирование угроз по ФСТЭК"
-            }
-          },
-          {
             "id": "a60e8a1aaea59a45",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
+                "file": "Кибербезопасность/SS - server side/File upload.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Введение в SQL injection"
+              "title": "File upload"
             }
           }
         ]
@@ -70,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "docker",
+                "query": "поднять сервер",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -157,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/DevOps/shool_21/Simple Docker.md",
+                "file": "Кибербезопасность/SS - server side/File upload.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Simple Docker"
+              "title": "Структура File upload"
             }
           }
         ],
@@ -171,8 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,56 +167,58 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "e61e835bfdf08d97",
+  "active": "a60e8a1aaea59a45",
   "lastOpenFiles": [
-    "Стороннее/MITRE ATT&CK.canvas",
-    "Стороннее/assets/Pasted image 20251008165733.png",
-    "Стороннее/assets/Pasted image 20251008165656.png",
-    "Стороннее/OWASP Top 10.canvas",
-    "Стороннее/assets/Pasted image 20251008145304.png",
+    "Кибербезопасность/CS - client side/XSS.md",
+    "Кибербезопасность/CS - client side/Web-cach deception.md",
+    "Кибербезопасность/Инструментарий.md",
+    "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
+    "Кибербезопасность/DevOps/Передача файлов.md",
+    "Кибербезопасность/Сканирование сети/Сети/Протоколы удалённого доступа.md",
+    "Android безопасность/TOOLS.md",
+    "Android безопасность/Теория об Android приложениях.md",
+    "Android безопасность/Лучшие хакерские программы для взлома со смартфона.md",
+    "Кибербезопасность/DevOps/Администрирование Linux.md",
+    "Кибербезопасность/SS - server side/SQL/Введение в SQL.md",
+    "Кибербезопасность/Сканирование сети/Сети/Локальные адреса.md",
+    "Кибербезопасность/assets/Pre-fight Requests.png",
+    "Кибербезопасность/CS - client side/CORS.md",
     "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
+    "Прочая теория/assets/Pasted image 20240602175745.png",
+    "Прочая теория/OWASP Top 10.canvas",
+    "Общая кибербезопасность",
+    "Новая папка",
+    "Прочая теория/Моделирование угроз по STRIDE и DREAD.canvas",
+    "Прочая теория/Моделирование угроз по ФСТЭК.canvas",
+    "Прочая теория/MITRE ATT&CK.canvas",
+    "Прочая теория/assets/Pasted image 20251008165733.png",
+    "Прочая теория/assets/Pasted image 20251008165656.png",
+    "Прочая теория/assets/Pasted image 20251008145304.png",
     "Кибербезопасность/SS - server side/SQL/SQL injections - SQLMAP.md",
-    "Стороннее/assets/Pasted image 20251008113256.png",
-    "Стороннее/assets/Pasted image 20251008113214.png",
-    "Стороннее/Моделирование угроз по ФСТЭК.canvas",
-    "Стороннее/Криптография - GPG.md",
+    "Прочая теория/assets/Pasted image 20251008113256.png",
+    "Прочая теория/assets/Pasted image 20251008113214.png",
+    "Прочая теория/Криптография - GPG.md",
     "Стороннее/Без названия",
     "Кибербезопасность/DevOps/shool_21/Simple Docker.md",
-    "Стороннее/Docker.md",
+    "Прочая теория/Docker.md",
     "Кибербезопасность/Техники/Bruteforce/URL.md",
     "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/Введение.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20250920212142.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20250920211925.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20250920211832.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20250920211755.png",
-    "Кибербезопасность/SS - server side/SQL/Введение в SQL.md",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20250920205237.png",
-    "Кибербезопасность/Сканирование сети/Сети/Протоколы удалённого доступа.md",
     "Кибербезопасность/SS - server side/SQL",
-    "Кибербезопасность/Инструментарий.md",
     "Кибербезопасность/DevOps/update shell && create server && create connect.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/1. Исследование Windows.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/().md",
     "Кибербезопасность/Сетевые атаки/Active Directory/здесь.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/assets",
-    "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/Leaked Wallpaper (повышение привелегий).md",
     "Кибербезопасность/Сетевые атаки/Active Directory/kerbrute.md",
-    "Кибербезопасность/Сетевые атаки/Active Directory/Invoke-ADEnum.md",
-    "Кибербезопасность/Сетевые атаки/Active Directory/Crackmapexec.md",
-    "Кибербезопасность/Сетевые атаки/Active Directory/bloodhound.md",
-    "Кибербезопасность/DevOps/Linux utilits.md",
-    "Кибербезопасность/DevOps/Передача файлов.md",
-    "Кибербезопасность/DevOps/Администрирование Linux.md",
-    "Android безопасность/Теория об Android приложениях.md",
     "Android безопасность/ОС Android и SELinux.pptx",
     "Android безопасность/assets",
-    "Android безопасность/TOOLS.md",
     "Кибербезопасность/Анализ/Reverse инженеринг + PWN/Reverse ВПО",
     "Кибербезопасность/Анализ/Без названия",
     "Кибербезопасность/Анализ",
-    "Кибербезопасность/Пробив_docksing/assets",
-    "Кибербезопасность/Пробив_docksing",
     "Кибербезопасность/Реверс инженеринг/Без названия.canvas",
     "Без названия.canvas"
   ]

