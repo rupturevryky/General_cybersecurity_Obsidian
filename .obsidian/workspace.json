@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/CS - client side/Web-cach deception.md",
+                "file": "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web-cach deception"
+              "title": "WebSockets vulnerabilities"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/CS - client side/Web-cach deception.md",
+                "file": "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Web-cach deception"
+              "title": "Структура WebSockets vulnerabilities"
             }
           }
         ],
@@ -167,13 +167,15 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "a60e8a1aaea59a45",
+  "active": "fb70872d9f9d1a5d",
   "lastOpenFiles": [
+    "Кибербезопасность/assets/Pasted image 20251225122200.png",
+    "Кибербезопасность/CS - client side/Web-cach deception.md",
+    "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
     "Кибербезопасность/assets/Pasted image 20251224184455.png",
     "Кибербезопасность/SS - server side/API Testing.md",
     "Кибербезопасность/SS - server side/File upload.md",
     "Кибербезопасность/CS - client side/XSS.md",
-    "Кибербезопасность/CS - client side/Web-cach deception.md",
     "Кибербезопасность/Инструментарий.md",
     "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
     "Кибербезопасность/DevOps/Передача файлов.md",
@@ -208,11 +210,9 @@
     "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/Введение.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20250920212142.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20250920211925.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20250920211832.png",
     "Кибербезопасность/SS - server side/SQL",
     "Кибербезопасность/DevOps/update shell && create server && create connect.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/1. Исследование Windows.md",
-    "Кибербезопасность/Сетевые атаки/Active Directory/().md",
     "Кибербезопасность/Сетевые атаки/Active Directory/assets",
     "Android безопасность/ОС Android и SELinux.pptx",
     "Android безопасность/assets",
