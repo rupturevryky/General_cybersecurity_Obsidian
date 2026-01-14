@@ -4,24 +4,61 @@
     "type": "split",
     "children": [
       {
-        "id": "6882b2181705f950",
+        "id": "96955bf53f1094bc",
         "type": "tabs",
+        "dimension": 51.541554959785515,
         "children": [
           {
-            "id": "a60e8a1aaea59a45",
+            "id": "9fecb2fcddcfa2d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
+                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WebSockets vulnerabilities"
+              "title": "PortSwigger SQL injection"
             }
           }
         ]
+      },
+      {
+        "id": "6882b2181705f950",
+        "type": "tabs",
+        "dimension": 48.45844504021448,
+        "children": [
+          {
+            "id": "79846cc0dd988086",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Введение в SQL injection"
+            }
+          },
+          {
+            "id": "d1f8436a77129ab0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "PortSwigger SQL injection"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +90,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "поднять сервер",
+                "query": "trave",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +115,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5
+    "width": 366.5,
+    "collapsed": true
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -140,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
+                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура WebSockets vulnerabilities"
+              "title": "Структура PortSwigger SQL injection"
             }
           }
         ],
@@ -154,7 +192,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,14 +206,23 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "fb70872d9f9d1a5d",
+  "active": "d1f8436a77129ab0",
   "lastOpenFiles": [
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260114180803.png",
+    "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/SQLMap SQL injections.md",
+    "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
+    "Кибербезопасность/SS - server side/1. Server-side vulnerabilities.md",
+    "Кибербезопасность/SS - server side/File upload.md",
+    "Кибербезопасность/SS - server side/Path Traversal, LFI, RFI.md",
+    "Кибербезопасность/SS - server side/SSRF.md",
+    "[PayloadsAllTheThings/Server.md",
+    "[PayloadsAllTheThings",
+    "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
     "Кибербезопасность/assets/Pasted image 20251225122200.png",
     "Кибербезопасность/CS - client side/Web-cach deception.md",
-    "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
     "Кибербезопасность/assets/Pasted image 20251224184455.png",
     "Кибербезопасность/SS - server side/API Testing.md",
-    "Кибербезопасность/SS - server side/File upload.md",
     "Кибербезопасность/CS - client side/XSS.md",
     "Кибербезопасность/Инструментарий.md",
     "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
@@ -188,7 +236,6 @@
     "Кибербезопасность/Сканирование сети/Сети/Локальные адреса.md",
     "Кибербезопасность/assets/Pre-fight Requests.png",
     "Кибербезопасность/CS - client side/CORS.md",
-    "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
     "Прочая теория/assets/Pasted image 20240602175745.png",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
@@ -199,26 +246,17 @@
     "Прочая теория/assets/Pasted image 20251008165733.png",
     "Прочая теория/assets/Pasted image 20251008165656.png",
     "Прочая теория/assets/Pasted image 20251008145304.png",
-    "Кибербезопасность/SS - server side/SQL/SQL injections - SQLMAP.md",
     "Прочая теория/assets/Pasted image 20251008113256.png",
     "Прочая теория/assets/Pasted image 20251008113214.png",
     "Прочая теория/Криптография - GPG.md",
     "Стороннее/Без названия",
     "Кибербезопасность/DevOps/shool_21/Simple Docker.md",
-    "Прочая теория/Docker.md",
-    "Кибербезопасность/Техники/Bruteforce/URL.md",
-    "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/Введение.md",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20250920212142.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20250920211925.png",
     "Кибербезопасность/SS - server side/SQL",
-    "Кибербезопасность/DevOps/update shell && create server && create connect.md",
-    "Кибербезопасность/Сетевые атаки/Active Directory/1. Исследование Windows.md",
     "Кибербезопасность/Сетевые атаки/Active Directory/assets",
     "Android безопасность/ОС Android и SELinux.pptx",
     "Android безопасность/assets",
     "Кибербезопасность/Анализ/Reverse инженеринг + PWN/Reverse ВПО",
     "Кибербезопасность/Анализ/Без названия",
-    "Кибербезопасность/Анализ",
     "Кибербезопасность/Реверс инженеринг/Без названия.canvas",
     "Без названия.canvas"
   ]
