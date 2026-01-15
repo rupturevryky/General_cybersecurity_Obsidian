@@ -6,7 +6,7 @@
       {
         "id": "96955bf53f1094bc",
         "type": "tabs",
-        "dimension": 51.541554959785515,
+        "dimension": 45.897832817337466,
         "children": [
           {
             "id": "9fecb2fcddcfa2d9",
@@ -27,7 +27,7 @@
       {
         "id": "6882b2181705f950",
         "type": "tabs",
-        "dimension": 48.45844504021448,
+        "dimension": 54.10216718266254,
         "children": [
           {
             "id": "79846cc0dd988086",
@@ -192,8 +192,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,10 +207,11 @@
   },
   "active": "d1f8436a77129ab0",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260114180803.png",
-    "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
-    "Кибербезопасность/SS - server side/SQL/SQLMap SQL injections.md",
     "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/Введение в SQL.md",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260114180803.png",
+    "Кибербезопасность/SS - server side/SQL/SQLMap SQL injections.md",
     "Кибербезопасность/SS - server side/1. Server-side vulnerabilities.md",
     "Кибербезопасность/SS - server side/File upload.md",
     "Кибербезопасность/SS - server side/Path Traversal, LFI, RFI.md",
@@ -232,7 +232,6 @@
     "Android безопасность/Теория об Android приложениях.md",
     "Android безопасность/Лучшие хакерские программы для взлома со смартфона.md",
     "Кибербезопасность/DevOps/Администрирование Linux.md",
-    "Кибербезопасность/SS - server side/SQL/Введение в SQL.md",
     "Кибербезопасность/Сканирование сети/Сети/Локальные адреса.md",
     "Кибербезопасность/assets/Pre-fight Requests.png",
     "Кибербезопасность/CS - client side/CORS.md",
