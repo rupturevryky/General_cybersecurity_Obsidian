@@ -4,57 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "96955bf53f1094bc",
+        "id": "224fdbcf236fa7c6",
         "type": "tabs",
-        "dimension": 45.897832817337466,
         "children": [
           {
-            "id": "9fecb2fcddcfa2d9",
+            "id": "8fc8751971004a62",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+                "file": "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "PortSwigger SQL injection"
-            }
-          }
-        ]
-      },
-      {
-        "id": "6882b2181705f950",
-        "type": "tabs",
-        "dimension": 54.10216718266254,
-        "children": [
-          {
-            "id": "79846cc0dd988086",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Введение в SQL injection"
+              "title": "4. PortSwigger NoSQL injection"
             }
           },
           {
-            "id": "d1f8436a77129ab0",
+            "id": "b23f5119965f5672",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+                "file": "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "PortSwigger SQL injection"
+              "title": "5. SQLMap for SQL injections"
             }
           }
         ],
@@ -90,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "trave",
+                "query": "tag:#ASCII",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -115,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5,
-    "collapsed": true
+    "width": 366.5
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -178,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
+                "file": "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура PortSwigger SQL injection"
+              "title": "Структура 5. SQLMap for SQL injections"
             }
           }
         ],
@@ -205,14 +182,27 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "d1f8436a77129ab0",
+  "active": "b23f5119965f5672",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/SQL/Введение в SQL injection.md",
-    "Кибербезопасность/SS - server side/SQL/PortSwigger SQL injection.md",
-    "Кибербезопасность/SS - server side/SQL/Введение в SQL.md",
+    "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
+    "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
+    "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/3. PortSwigger SQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/2. Введение в SQL injection.md",
+    "Кибербезопасность/SS - server side/SQL/1. Введение в SQL.md",
+    "Кибербезопасность/SS - server side/Authentication vulnerabilities.md",
+    "Кибербезопасность/CS - client side/Cross-origin resource sharing (CORS).md",
+    "Кибербезопасность/assets/CORS уязвимости.png",
+    "Кибербезопасность/assets/CSP директивы.png",
+    "Кибербезопасность/assets/Типы сканирований и протоколы.png",
+    "Кибербезопасность/assets/Список скриптов nmap.png",
+    "Кибербезопасность/assets/План сканирвоания.png",
+    "Кибербезопасность/assets/Pre-fight Requests.png",
+    "Кибербезопасность/CS - client side/assets/Pasted image 20260121121558.png",
+    "Кибербезопасность/CS - client side/XSS.md",
+    "Кибербезопасность/CS - client side/DOM_XSS.md",
+    "Кибербезопасность/CS - client side/Clickjacking (UI redressing).md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260114180803.png",
-    "Кибербезопасность/SS - server side/SQL/SQLMap SQL injections.md",
-    "Кибербезопасность/SS - server side/1. Server-side vulnerabilities.md",
     "Кибербезопасность/SS - server side/File upload.md",
     "Кибербезопасность/SS - server side/Path Traversal, LFI, RFI.md",
     "Кибербезопасность/SS - server side/SSRF.md",
@@ -223,7 +213,6 @@
     "Кибербезопасность/CS - client side/Web-cach deception.md",
     "Кибербезопасность/assets/Pasted image 20251224184455.png",
     "Кибербезопасность/SS - server side/API Testing.md",
-    "Кибербезопасность/CS - client side/XSS.md",
     "Кибербезопасность/Инструментарий.md",
     "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
     "Кибербезопасность/DevOps/Передача файлов.md",
@@ -232,24 +221,13 @@
     "Android безопасность/Теория об Android приложениях.md",
     "Android безопасность/Лучшие хакерские программы для взлома со смартфона.md",
     "Кибербезопасность/DevOps/Администрирование Linux.md",
-    "Кибербезопасность/Сканирование сети/Сети/Локальные адреса.md",
-    "Кибербезопасность/assets/Pre-fight Requests.png",
-    "Кибербезопасность/CS - client side/CORS.md",
-    "Прочая теория/assets/Pasted image 20240602175745.png",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
     "Новая папка",
     "Прочая теория/Моделирование угроз по STRIDE и DREAD.canvas",
     "Прочая теория/Моделирование угроз по ФСТЭК.canvas",
     "Прочая теория/MITRE ATT&CK.canvas",
-    "Прочая теория/assets/Pasted image 20251008165733.png",
-    "Прочая теория/assets/Pasted image 20251008165656.png",
-    "Прочая теория/assets/Pasted image 20251008145304.png",
-    "Прочая теория/assets/Pasted image 20251008113256.png",
-    "Прочая теория/assets/Pasted image 20251008113214.png",
-    "Прочая теория/Криптография - GPG.md",
     "Стороннее/Без названия",
-    "Кибербезопасность/DevOps/shool_21/Simple Docker.md",
     "Кибербезопасность/SS - server side/SQL",
     "Кибербезопасность/Сетевые атаки/Active Directory/assets",
     "Android безопасность/ОС Android и SELinux.pptx",
