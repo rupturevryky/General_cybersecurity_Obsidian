@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "4. PortSwigger NoSQL injection"
             }
-          },
-          {
-            "id": "b23f5119965f5672",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "5. SQLMap for SQL injections"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
+                "file": "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура 5. SQLMap for SQL injections"
+              "title": "Структура 4. PortSwigger NoSQL injection"
             }
           }
         ],
@@ -182,10 +167,10 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "b23f5119965f5672",
+  "active": "8fc8751971004a62",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
     "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
+    "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
     "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
     "Кибербезопасность/SS - server side/SQL/3. PortSwigger SQL injection.md",
     "Кибербезопасность/SS - server side/SQL/2. Введение в SQL injection.md",
