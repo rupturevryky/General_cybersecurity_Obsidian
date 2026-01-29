@@ -137,7 +137,7 @@ WebSockets используются для самых разных целей, �
 
 Например, следующий запрос на рукопожатие WebSocket, вероятно, уязвим к CSRF, поскольку единственный токен сессии передаётся в cookie:
 
-```
+```http
 GET /chat HTTP/1.1 
 Host: normal-website.com 
 Sec-WebSocket-Version: 13 
@@ -192,7 +192,7 @@ https://portswigger.net/web-security/learning-paths/websockets-security-vulnerab
 8. Click "Connect" to successfully reconnect the WebSocket.
 9. Send a WebSocket message containing an obfuscated XSS payload, such as:
   
-```
+```html
 `<img src=1 oNeRrOr=alert`1`>`
 ```
 
