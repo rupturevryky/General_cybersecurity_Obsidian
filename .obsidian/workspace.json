@@ -13,12 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/Race conditions.md",
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
                 "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "OAuth 2.0"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dc75d4014652fa82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bec5bdea2c8e8592",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Race conditions"
+              "title": "OAuth 2.0"
             }
           }
         ]
@@ -78,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5
+    "width": 325.5,
+    "collapsed": true
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -140,13 +161,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/Race conditions.md",
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Race conditions"
+              "title": "Структура OAuth 2.0"
             }
           }
         ],
@@ -167,26 +188,28 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "5c7463f97f98cf84",
+  "active": "bec5bdea2c8e8592",
   "lastOpenFiles": [
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260131202051.png",
+    "Кибербезопасность/SS - server side/GraphQL.md",
+    "Кибербезопасность/SS - server side/OAuth 2.0.md",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
+    "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128153514.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128154931.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128165301.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128163616.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128163648.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128163726.png",
-    "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128200446.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260127202120.png",
     "Кибербезопасность/SS - server side/Pasted image 20260127202149.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260127201300.png",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
     "Кибербезопасность/SS - server side/SSTI.md",
     "Кибербезопасность/CS - client side/CSRF.md",
     "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
     "Кибербезопасность/SS - server side/SSRF.md",
     "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/CVEScannerV2.md",
-    "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/Техники/Web vulnerabitiry.md",
     "Android безопасность/TOOLS.md",
     "Кибербезопасность/Burp Suite.md",
@@ -204,7 +227,6 @@
     "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
     "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
     "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
-    "Кибербезопасность/SS - server side/SQL/3. PortSwigger SQL injection.md",
     "[PayloadsAllTheThings",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
