@@ -6,6 +6,7 @@
       {
         "id": "372141aa8ac88d88",
         "type": "tabs",
+        "dimension": 53.637770897832816,
         "children": [
           {
             "id": "30d062e438afa97f",
@@ -14,7 +15,28 @@
               "type": "markdown",
               "state": {
                 "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
-                "mode": "preview",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "OAuth 2.0"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1a592ed4364ff8b6",
+        "type": "tabs",
+        "dimension": 46.362229102167184,
+        "children": [
+          {
+            "id": "577abb1bfdf990da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
@@ -78,7 +100,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5
+    "width": 325.5,
+    "collapsed": true
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -171,10 +194,10 @@
   },
   "active": "30d062e438afa97f",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/Pasted image 20260202171948.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260202171948.png",
+    "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131202051.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
-    "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
     "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128153514.png",
@@ -184,7 +207,6 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128163648.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128163726.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260128200446.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260127202120.png",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
     "Кибербезопасность/SS - server side/SSTI.md",
     "Кибербезопасность/CS - client side/CSRF.md",
