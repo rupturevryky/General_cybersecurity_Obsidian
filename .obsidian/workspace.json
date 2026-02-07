@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "372141aa8ac88d88",
+        "id": "1a592ed4364ff8b6",
         "type": "tabs",
-        "dimension": 53.637770897832816,
+        "dimension": 59.73084886128365,
         "children": [
           {
-            "id": "30d062e438afa97f",
+            "id": "577abb1bfdf990da",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -25,12 +25,12 @@
         ]
       },
       {
-        "id": "1a592ed4364ff8b6",
+        "id": "72cf2af2fa2b336c",
         "type": "tabs",
-        "dimension": 46.362229102167184,
+        "dimension": 40.26915113871636,
         "children": [
           {
-            "id": "577abb1bfdf990da",
+            "id": "fd23d3a933614bde",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -100,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5,
-    "collapsed": true
+    "width": 325.5
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -192,21 +191,21 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "30d062e438afa97f",
+  "active": "577abb1bfdf990da",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260202171948.png",
-    "Кибербезопасность/SS - server side/OAuth 2.0.md",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260131202051.png",
-    "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
+    "Кибербезопасность/SS - server side/OAuth 2.0.md",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819 1.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206140335.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206142606.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206142024.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206142001.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206141831.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206141329.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206141233.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260206140623.png",
+    "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Race conditions.md",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128153514.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128154931.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128165301.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128163616.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128163648.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128163726.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260128200446.png",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
     "Кибербезопасность/SS - server side/SSTI.md",
     "Кибербезопасность/CS - client side/CSRF.md",
