@@ -6,7 +6,7 @@
       {
         "id": "1a592ed4364ff8b6",
         "type": "tabs",
-        "dimension": 59.73084886128365,
+        "dimension": 53.79256965944273,
         "children": [
           {
             "id": "577abb1bfdf990da",
@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "file": "Кибербезопасность/SS - server side/JWT.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "OAuth 2.0"
+              "title": "JWT"
             }
           }
         ]
@@ -27,7 +27,7 @@
       {
         "id": "72cf2af2fa2b336c",
         "type": "tabs",
-        "dimension": 40.26915113871636,
+        "dimension": 46.20743034055727,
         "children": [
           {
             "id": "fd23d3a933614bde",
@@ -35,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
-                "mode": "source",
+                "file": "Кибербезопасность/SS - server side/JWT.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "OAuth 2.0"
+              "title": "JWT"
             }
           }
         ]
@@ -75,7 +75,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "XXE",
+                "query": "7636",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +100,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5
+    "width": 325.5,
+    "collapsed": true
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -164,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "file": "Кибербезопасность/SS - server side/JWT.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура OAuth 2.0"
+              "title": "Структура JWT"
             }
           }
         ],
@@ -193,8 +194,9 @@
   },
   "active": "577abb1bfdf990da",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
     "Кибербезопасность/SS - server side/OAuth 2.0.md",
+    "Кибербезопасность/SS - server side/JWT.md",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819 1.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206140335.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206142606.png",
