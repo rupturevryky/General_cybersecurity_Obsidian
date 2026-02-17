@@ -100,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5,
-    "collapsed": true
+    "width": 325.5
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -192,8 +191,10 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "577abb1bfdf990da",
+  "active": "fb70872d9f9d1a5d",
   "lastOpenFiles": [
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260217163457.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260217163351.png",
     "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/JWT.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
@@ -205,7 +206,6 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206141831.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206141329.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206141233.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260206140623.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
@@ -230,7 +230,6 @@
     "Кибербезопасность/Пробив_docksing/Взлом устройства человека.md",
     "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
     "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
-    "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
     "[PayloadsAllTheThings",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
