@@ -13,12 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
-                "mode": "preview",
+                "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "OAuth 2.0"
+              "title": "HTTP request smuggling"
+            }
+          }
+        ]
+      },
+      {
+        "id": "fd6e979c14c0afe4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9fbefefc3fbbc0b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "HTTP request smuggling"
             }
           }
         ]
@@ -78,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5
+    "width": 325.5,
+    "collapsed": true
   },
   "right": {
     "id": "d28dbf5cf7b7d164",
@@ -142,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура OAuth 2.0"
+              "title": "Структура HTTP request smuggling"
             }
           }
         ],
@@ -156,7 +177,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,12 +191,15 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "577abb1bfdf990da",
+  "active": "c9fbefefc3fbbc0b",
   "lastOpenFiles": [
+    "Кибербезопасность/SS - server side/Pasted image 20260222171102.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260222171037.png",
+    "Кибербезопасность/SS - server side/OAuth 2.0.md",
+    "Кибербезопасность/SS - server side/HTTP request smuggling.md",
     "Кибербезопасность/SS - server side/JWT.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260217163457.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260217163351.png",
-    "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819 1.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206140335.png",
@@ -182,7 +207,6 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206142024.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206142001.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206141831.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260206141329.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
@@ -206,7 +230,6 @@
     "Кибербезопасность/Пробив_docksing/Деанон пользователя VK с помощью фишинга.md",
     "Кибербезопасность/Пробив_docksing/Взлом устройства человека.md",
     "Кибербезопасность/SS - server side/SQL/4. PortSwigger NoSQL injection.md",
-    "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
     "[PayloadsAllTheThings",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
