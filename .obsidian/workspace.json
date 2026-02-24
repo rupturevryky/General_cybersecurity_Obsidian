@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -34,7 +34,7 @@
               "type": "markdown",
               "state": {
                 "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -177,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,7 +192,10 @@
   },
   "active": "c9fbefefc3fbbc0b",
   "lastOpenFiles": [
-    "Кибербезопасность/SS - server side/Pasted image 20260222171102.png",
+    "Кибербезопасность/assets/Pasted image 20260223011718.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260223005542.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260223001037.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260222171102.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260222171037.png",
     "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/HTTP request smuggling.md",
@@ -204,9 +206,6 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260131194819 1.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206140335.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260206142606.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260206142024.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260206142001.png",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260206141831.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",

