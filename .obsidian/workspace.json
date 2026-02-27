@@ -34,7 +34,7 @@
               "type": "markdown",
               "state": {
                 "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -192,6 +192,8 @@
   },
   "active": "c9fbefefc3fbbc0b",
   "lastOpenFiles": [
+    "Кибербезопасность/SS - server side/Pasted image 20260227234938.png",
+    "Кибербезопасность/SS - server side/assets/Pasted image 20260226192910.png",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260224233302.png",
     "Кибербезопасность/SS - server side/HTTP request smuggling.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260224234717.png",
@@ -204,7 +206,6 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260222171037.png",
     "Кибербезопасность/SS - server side/OAuth 2.0.md",
     "Кибербезопасность/SS - server side/JWT.md",
-    "Кибербезопасность/SS - server side/assets/Pasted image 20260217163457.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Race conditions.md",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
