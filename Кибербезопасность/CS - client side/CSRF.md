@@ -766,7 +766,6 @@ CSRF атака возможна, если допущены ошибки в ме
 ## Разница Site и Origin
 
 ![[Pasted image 20250114182435.png]]
-![[Pasted image 20250114182521.png]]
 
 ---
 ## Какими бывают Cookie - SameSite
