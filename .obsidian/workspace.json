@@ -8,49 +8,40 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c9fbefefc3fbbc0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Кибербезопасность/SS - server side/HTTP request smuggling.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HTTP request smuggling"
-            }
-          },
-          {
-            "id": "532544009ce46594",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Кибербезопасность/SS - server side/JWT.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "JWT"
-            }
-          },
-          {
             "id": "911b89f9c4cf86e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Кибербезопасность/SS - server side/JWT.md",
-                "mode": "source",
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JWT"
+              "title": "OAuth 2.0"
             }
           }
-        ],
-        "currentTab": 2
+        ]
+      },
+      {
+        "id": "8138630294aa69d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "071b9f3ebe20e86b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OAuth 2.0"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "7636",
+                "query": "brute",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 243.5,
     "collapsed": true
   },
   "right": {
@@ -172,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Кибербезопасность/SS - server side/JWT.md",
+                "file": "Кибербезопасность/SS - server side/OAuth 2.0.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура JWT"
+              "title": "Структура OAuth 2.0"
             }
           }
         ],
@@ -199,15 +190,30 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "911b89f9c4cf86e6",
+  "active": "071b9f3ebe20e86b",
   "lastOpenFiles": [
     "Кибербезопасность/SS - server side/OAuth 2.0.md",
-    "Кибербезопасность/SS - server side/Race conditions.md",
-    "Кибербезопасность/SS - server side/Path Traversal, LFI, RFI.md",
-    "Кибербезопасность/SS - server side/HTTP request smuggling.md",
-    "Кибербезопасность/CS - client side/CSRF.md",
-    "Кибербезопасность/SS - server side/Authentication vulnerabilities.md",
     "Кибербезопасность/SS - server side/JWT.md",
+    "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
+    "Кибербезопасность/Техники/Bruteforce/URL.md",
+    "Кибербезопасность/Техники/Bruteforce/Пароли.md",
+    "Кибербезопасность/SS - server side/SSTI.md",
+    "Кибербезопасность/Техники/Bruteforce/Wordlists.md",
+    "Кибербезопасность/Техники/Bruteforce/Создание словарей.md",
+    "Кибербезопасность/Сетевые атаки/Responder.md",
+    "Кибербезопасность/SS - server side/Authentication vulnerabilities.md",
+    "Кибербезопасность/SS - server side/API Testing.md",
+    "Кибербезопасность/SS - server side/Введение в Server-side vulnerabilities.md",
+    "Кибербезопасность/SS - server side/Path Traversal, LFI, RFI.md",
+    "Кибербезопасность/SS - server side/File upload.md",
+    "Кибербезопасность/SS - server side/HTTP request smuggling.md",
+    "Кибербезопасность/SS - server side/SQL/5. SQLMap for SQL injections.md",
+    "Кибербезопасность/Сетевые атаки/Nmap.md",
+    "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/Введение.md",
+    "Кибербезопасность/Сканирование сети/Сети/Сканирование сети - основа.md",
+    "Кибербезопасность/Сканирование сети/Разведка/FOCA.md",
+    "Кибербезопасность/SS - server side/Race conditions.md",
+    "Кибербезопасность/CS - client side/CSRF.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260303225443.png",
     "Кибербезопасность/SS - server side/Pasted image 20260303221900.png.md",
     "Кибербезопасность/SS - server side/assets/Pasted image 20260303221647.png",
@@ -221,23 +227,8 @@
     "Кибербезопасность/SS - server side/assets/Pasted image 20260228144002.png",
     "Кибербезопасность/SS - server side/GraphQL.md",
     "Кибербезопасность/SS - server side/Pasted image 20260127201224.png.md",
-    "Кибербезопасность/SS - server side/SSTI.md",
     "Кибербезопасность/CS - client side/WebSockets vulnerabilities.md",
-    "Кибербезопасность/SS - server side/SSRF.md",
-    "Кибербезопасность/Сканирование сети/Сканирование уязвимостей/CVEScannerV2.md",
-    "Кибербезопасность/Техники/Web vulnerabitiry.md",
-    "Android безопасность/TOOLS.md",
-    "Кибербезопасность/Burp Suite.md",
-    "Android безопасность/Теория об Android приложениях.md",
-    "Android безопасность/Лучшие хакерские программы для взлома со смартфона.md",
     "Кибербезопасность/DevOps/assets/Docker_Command_Cheat_Sheet.pdf",
-    "Кибербезопасность/DevOps/Docker.md",
-    "Прочая теория/Криптография - GPG.md",
-    "Прочая теория/Теория чисел и современная криптография/Введение - простые числа от Эвклида до Римана.md",
-    "Кибербезопасность/Другие источники для хакинга.md",
-    "Кибербезопасность/Повышение привелегий/Алгоритм действий.md",
-    "Кибербезопасность/Пробив_docksing/Фишинг.md",
-    "Кибербезопасность/Пробив_docksing/Деанон пользователя VK с помощью фишинга.md",
     "[PayloadsAllTheThings",
     "Прочая теория/OWASP Top 10.canvas",
     "Общая кибербезопасность",
